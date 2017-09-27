@@ -1,0 +1,23 @@
+### SYSTEM ###
+*.DS_Store
+
+### LOGS ###
+*.log
+
+### VENDOR ###
+bin/
+node_modules/
+
+### GENERATED ###
+dist/
+
+### CONFIG ###
+eslint-checkstyle.xml
+
+### IDE ###
+.idea/
+*.swo
+*.swp
+
+### TESTING ###
+

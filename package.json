@@ -1,0 +1,27 @@
+{
+  "name": "roomstatus",
+  "version": "1.0.0",
+  "description": "Checks the free/busy status of a conference room",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saishg/roomstatus.git"
+  },
+  "keywords": [
+    "roomstatus"
+  ],
+  "author": "Tejaswaroop, Saish, Rohit, Ashok",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saishg/roomstatus/issues"
+  },
+  "homepage": "https://github.com/saishg/roomstatus#readme",
+  "dependencies": {
+    "node-schedule": "^1.2.5",
+    "request": "^2.83.0",
+    "underscore": "^1.8.3"
+  }
+}
