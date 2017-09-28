@@ -5,6 +5,11 @@ var request = require('request');
 var schedule = require('node-schedule');
 var constants = require('./constants');
 
+
+var sys = require('sys')
+var exec = require('child_process').exec;
+function puts(error, stdout, stderr) { sys.puts(stdout) }
+
 console.log(constants.SERVER_URL);
 function execute() {
     request({
@@ -18,11 +23,17 @@ function execute() {
         agent: false
     }, function(error, response, roomStatus) {
         roomStatus = JSON.parse(roomStatus);
-        console.log(roomStatus);
+        if (roomStatus.status === 'Busy') {
+            console.log(roomStatus.status);
+            exec("t2 run /Users/tvankada/tessel-code/index.js", puts);
+        } else  if (roomStatus.status === 'Free') {
+            console.log(roomStatus.status);
+            exec("t2 run /Users/tvankada/tessel-code/index2.js", puts);
+        }
     });
 }
 execute();
 // Code to run the execute function every 1 minute
-var j = schedule.scheduleJob('*/1 * * * *', function(){
+var j = schedule.scheduleJob('/10 * * * * *', function(){
     execute();
 });
